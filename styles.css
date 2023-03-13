@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+
+:root {
+  --text-color: #249232;
+  --clr-neon: #39ff14;
+  --clr-bg: hsl(323 21% 16%);
+}
+
+body {
+  background-color: #1d1c1a;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+p {
+  color: var(--text-color);
+}
+
+h2 {
+  color: var(--text-color);
+}
+pre {
+  color: var(--text-color);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  text-align: center;
+}
+
+.folders {
+  width: 550px;
+  height: 400px;
+  /* background: #fff; */
+  align-items: normal;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: auto;
+  height: auto;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+}
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing;
+  animation-duration: 1s;
+  animation-timing-function: steps(30, end);
+  animation-fill-mode: forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.wb-body {
+  background: #111;
+  padding: 20px;
+}
+
+.button {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0.5em 1em;
+  border: dashed;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+
+  --background-color: #1d1c1a;
+  --border-size: 2px;
+  --accent-color: #0af;
+}
+
+.button.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--text-color);
+
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button.slide:hover::before,
+.button.slide:focus::before {
+  transform: scaleX(1);
+}
+
+.button.slide {
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
+
+.button.slide:hover,
+.button.slide:focus {
+  color: #1d1c1a;
+}
+
+/* #typing-container {
+  width: 500px;
+  height: 500px;
+  background: #fff;
+} */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
